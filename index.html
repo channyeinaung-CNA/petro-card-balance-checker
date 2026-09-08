@@ -1,0 +1,64 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+	<meta name="theme-color" content="#f4f0e8">
+	<title>Petro Card Balance Checker</title>
+	<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+	<main class="app-shell">
+		<header class="page-header">
+			<p class="eyebrow">Private, on-device workspace</p>
+			<h1>Petro Card<br><span>Balance Checker</span></h1>
+			<p class="intro">Select your card screenshots to get started. Your images stay in this browser.</p>
+		</header>
+
+		<section class="panel upload-panel" aria-labelledby="upload-title">
+			<div class="section-heading">
+				<div>
+					<p class="section-number">01</p>
+					<h2 id="upload-title">Choose screenshots</h2>
+				</div>
+				<span class="count-pill" id="image-count" aria-live="polite">0 images</span>
+			</div>
+
+			<label class="upload-dropzone" for="image-picker">
+				<span class="upload-icon" aria-hidden="true">+</span>
+				<span class="upload-title">Add card screenshots</span>
+				<span class="upload-hint">Tap to choose one or more images from Photos</span>
+			</label>
+			<input id="image-picker" class="visually-hidden" type="file" accept="image/*" multiple>
+
+			<div id="preview-grid" class="preview-grid" aria-live="polite"></div>
+
+			<div class="action-row">
+				<button id="clear-button" class="button button-secondary" type="button" disabled>Clear</button>
+				<button id="process-button" class="button button-primary" type="button" disabled>
+					<span>Process images</span>
+					<span aria-hidden="true">&#8594;</span>
+				</button>
+			</div>
+			<p class="privacy-note"><span aria-hidden="true">&#9679;</span> Nothing is uploaded or saved.</p>
+			<p id="status-message" class="status-message" role="status"></p>
+		</section>
+
+		<section class="results-section" aria-labelledby="results-title">
+			<div class="section-heading">
+				<div>
+					<p class="section-number">02</p>
+					<h2 id="results-title">Results</h2>
+				</div>
+				<span class="coming-soon">Coming next</span>
+			</div>
+			<div class="empty-results">
+				<span class="empty-mark" aria-hidden="true">—</span>
+				<p>Extracted card details will appear here after image processing.</p>
+			</div>
+		</section>
+	</main>
+
+	<script src="js/app.js" defer></script>
+</body>
+</html>
