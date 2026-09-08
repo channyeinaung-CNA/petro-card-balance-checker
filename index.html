@@ -40,7 +40,7 @@
 					<span aria-hidden="true">&#8594;</span>
 				</button>
 			</div>
-			<p class="privacy-note"><span aria-hidden="true">&#9679;</span> Nothing is uploaded or saved.</p>
+			<p class="privacy-note"><span aria-hidden="true">&#9679;</span> Screenshots and security codes are never saved or uploaded.</p>
 			<p id="status-message" class="status-message" role="status"></p>
 		</section>
 
@@ -50,15 +50,37 @@
 					<p class="section-number">02</p>
 					<h2 id="results-title">Results</h2>
 				</div>
-				<span class="coming-soon">Coming next</span>
+				<span class="coming-soon">Manual balance entry</span>
 			</div>
-			<div class="empty-results">
-				<span class="empty-mark" aria-hidden="true">—</span>
-				<p>Extracted card details will appear here after image processing.</p>
+			<div id="balance-summary" class="balance-summary" aria-live="polite"></div>
+			<div class="result-controls">
+				<label>Filter<select id="status-filter">
+					<option>All</option>
+					<option>Not checked</option>
+					<option>Used</option>
+					<option>Partially used</option>
+					<option>Unused</option>
+					<option>Check failed</option>
+				</select></label>
+				<label>Sort<select id="status-sort">
+					<option value="original">Screenshot order</option>
+					<option value="status">Status</option>
+					<option value="balance-high">Balance, high to low</option>
+				</select></label>
+			</div>
+			<div id="results-container" class="results-container">
+				<div class="empty-results">
+					<span class="empty-mark" aria-hidden="true">—</span>
+					<p>Extracted card details will appear here after image processing.</p>
+				</div>
 			</div>
 		</section>
 	</main>
 
+	<script src="https://cdn.jsdelivr.net/npm/tesseract.js@5.0.4/dist/tesseract.min.js" defer></script>
+	<script src="js/image-processor.js" defer></script>
+	<script src="js/card-parser.js" defer></script>
+	<script src="js/balance-checker.js" defer></script>
 	<script src="js/app.js" defer></script>
 </body>
 </html>
